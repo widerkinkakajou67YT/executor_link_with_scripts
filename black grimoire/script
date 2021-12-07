@@ -1,0 +1,18 @@
+loadstring(game:HttpGet"https://pastebin.com/raw/jwiaTNSb")()  
+
+if that link dont work heres the script
+
+_G.tog = not _G.tog
+local client = game.Players.LocalPlayer
+while _G.tog and wait() do
+	for i, v in next, workspace.WoodQ:GetChildren() do
+		while _G.tog and v.Name == "BREAKMEWP" and v.Breakable.Value and wait() do
+			pcall(function()
+				game:GetService"ReplicatedStorage".MissionEvent:FireServer("questpls", "Woodc")
+				client.Character.HumanoidRootPart.CFrame = v.CFrame * CFrame.new(0, 0.6, 4.5)
+				if not client.Character:FindFirstChild"MAxe" and client.Backpack:FindFirstChild"MAxe" then client.Backpack.MAxe.Parent = client.Character end
+				client.Character.MAxe:Activate()
+			end)
+		end
+	end
+end
